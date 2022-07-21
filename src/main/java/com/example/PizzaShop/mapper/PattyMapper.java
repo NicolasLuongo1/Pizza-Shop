@@ -1,5 +1,7 @@
 package com.example.PizzaShop.mapper;
 
+import com.example.PizzaShop.dto.PattyDTO;
+import com.example.PizzaShop.entity.Patty;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -7,5 +9,10 @@ import org.mapstruct.factory.Mappers;
 public interface PattyMapper {
 
     PattyMapper INSTANCE = Mappers.getMapper(PattyMapper.class);
+
+    Patty toEntity(PattyDTO pattyDTO);
+
+    PattyDTO toDTO(Patty patty);
+
 
 }

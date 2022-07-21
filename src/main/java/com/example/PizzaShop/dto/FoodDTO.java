@@ -1,7 +1,7 @@
-package com.example.PizzaShop.dao;
+package com.example.PizzaShop.dto;
 
 
-public class FoodDAO {
+public class FoodDTO {
 
     private String name;
     private String category;

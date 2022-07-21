@@ -1,4 +1,4 @@
-package com.example.PizzaShop.dao;
+package com.example.PizzaShop.dto;
 
-public class PizzaDAO extends FoodDAO{
+public class PizzaDTO extends FoodDTO {
 }

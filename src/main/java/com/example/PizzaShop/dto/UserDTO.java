@@ -1,6 +1,6 @@
-package com.example.PizzaShop.dao;
+package com.example.PizzaShop.dto;
 
-public class UserDAO {
+public class UserDTO {
 
     private String name;
     private String address;
