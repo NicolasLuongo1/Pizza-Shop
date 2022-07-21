@@ -1,8 +1,11 @@
 package com.example.PizzaShop.dao;
 
-public class UserDAO {
+
+public class FoodDAO {
 
     private String name;
-    private String address;
+    private String category;
+
+
 
 }
