@@ -12,6 +12,10 @@ font-family: 'Ruda', sans-serif; */
     margin: 0;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 #header{
     font-family: 'Ruda', sans-serif;
     display: flex;
@@ -33,11 +37,19 @@ font-family: 'Ruda', sans-serif; */
     margin-left: 20px;
 }
 
-#nav{
+.nav{
     width: 30%;
 }
 
-#header #nav ul{
+#close{
+    display: none;
+}
+
+.navbarMobile{
+    display: none;
+}
+
+#header .nav ul{
     width: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -45,13 +57,13 @@ font-family: 'Ruda', sans-serif; */
     list-style: none;
 }
 
-#header #nav ul a{
+#header .nav ul a{
     color: var(--white-txt);
     text-decoration: none;
     transition: 0.03s;
 }
 
-#header #nav ul a:hover{
+#header .nav ul a:hover{
     color: #F2C94C;
 }
 
@@ -385,7 +397,7 @@ font-family: 'Ruda', sans-serif; */
     text-decoration: none;
 }
 
-.md.hydrated {
+.icon {
 	font-size: 48px;
     color: var(--white-txt);
     background-color: var(--bg-color);
@@ -403,5 +415,190 @@ font-family: 'Ruda', sans-serif; */
     font-size: 1.5em;
     font-family: 'Ruda', sans-serif;
     text-align: center;
+}
+
+@media (min-width:600px) and (max-width:1400px) {
+    #header {
+        position: relative;
+    }
+    .nav {
+        width: 60%;
+    }
+    #header .nav ul {
+        justify-content: space-around;
+    }
+    .main .title h1 {
+        font-size: 3em;
+        margin-bottom: 10px;
+    }
+    .main .title p {
+        font-size: 1em;
+        width: 35%;
+    }
+    .pizza {
+        position: relative;
+    }
+    .pizzaMain{
+        position: relative;
+        left: 30px;
+    }
+    .aboutUs {
+        padding: 50px;
+    }
+    .aboutBox {
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .aboutUsText {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .aboutUsText h4 {
+        font-size: 3em;
+        font-weight: 400;
+        position: relative;
+        margin-bottom: 35px;
+    }
+    .aboutUsText p {
+        font-size: 1em;
+    }
+    .findBox > h4 {
+        font-size: 3em;
+    }
+    .findUs {
+        padding-top: 50px;
+    }
+    .findBox {
+        width: 100%;
+    }
+    .boxContainer {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .box iframe {
+        max-width: 800px;
+    }
+    .boxMap {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .boxTxt {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .box > p{
+        font-size: 0.8em;
+    }
+    .box > h5 {
+        margin-bottom: 20px;
+        font-size: 0.8em;
+    }
+    .menuBox > h4 {
+        font-size: 3em;
+    }
+    .menuBox > h4::after {
+        left: 0;
+        width: 100%;
+    }
+    .menuBox > p {
+        font-size: 1em;
+        line-height: 1.5;
+        letter-spacing: 2px;
+    }
+    .containerImgMenu {
+        gap: 60px;
+        margin-top: 50px;
+        flex-direction: column;
+    }
+    .footer > h2 {
+        font-size: 3em;
+    }
+    .socialMedia ul {
+        width: 45%;
+        justify-content: space-evenly;
+    }
+    .icon {
+        font-size: 36px;
+        padding: 8px;
+    }
+    .copyright > p {
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width:300px) and (max-width:599px){
+    #header {
+        justify-content: center;
+    }
+    .iconNav{
+        font-size: 24px;
+        cursor: pointer;
+        color: var(--white-txt);
+    }
+    #navbar {
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        z-index: 9;
+        width: 40%;
+        max-width: 320px;
+        background-color: #090B0A;
+        box-shadow: 0 40px 60px rgba(0,0, 0, 0.1);
+        padding: 80px 0 0 10px;
+        transition: 0.3s;
+    }
+    #close {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        display: initial;
+    }
+    .nav {
+        width: auto;
+    }
+    #navbar.active{
+        right: 0;
+    }
+    .navbarMobile{
+        display: initial;
+        position: absolute;
+        right: 40px;
+    }
+    #header .nav ul {
+        width: auto;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        list-style: none;
+    }
+    #navbar li {
+        margin-bottom: 25px;
+    }
+    #navbar li a {
+        display: block;
+        position: relative;
+        padding: 10px;
+        margin: 0 5px;
+    }
+    .iconNav:hover{
+        color: var(--yelow-txt);
+    }
+    #header h3 {
+        margin-left: 0;
+    }
+
 }
 

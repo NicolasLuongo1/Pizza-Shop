@@ -21,14 +21,18 @@
 <body>
 <header id="header">
     <h3>la caravana</h3>
-    <nav id="nav">
-        <ul>
+    <nav class="nav">
+        <ul id="navbar" >
             <li><a href="#">Home</a></li>
             <li><a href="#">About us</a></li>
             <li><a href="#">Menu</a></li>
             <li><a href="#">Contact</a></li>
+            <a id="close"><ion-icon class="iconNav" name="close-outline"></ion-icon></a></li>
         </ul>
     </nav>
+    <div class="navbarMobile" >
+        <ion-icon id="bar" class="iconNav" name="menu-outline"></ion-icon>
+    </div>
 </header>
 
 <section class="main">
@@ -38,7 +42,7 @@
             Quis vel perferendis unde porro, placeat accusantium molestias. Commodi quae natus necessitatibus est quam.</p>
     </div>
     <div class="pizza">
-        <img src="/src/main/resources/static/img/pizza-3000285_1920 1.png" alt="">
+        <img class="pizzaMain" src="/src/main/resources/static/img/pizza-3000285_1920 1.png" alt="">
     </div>
 </section>
 
@@ -100,9 +104,9 @@
     <h2>la caravana</h2>
     <div class="socialMedia">
         <ul>
-            <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
-            <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
-            <li><a href="#"><ion-icon name="logo-whatsapp"></ion-icon></a></li>
+            <li><a href="#"><ion-icon class="icon" name="logo-instagram"></ion-icon></a></li>
+            <li><a href="#"><ion-icon class="icon" name="logo-facebook"></ion-icon></a></li>
+            <li><a href="#"><ion-icon class="icon" name="logo-whatsapp"></ion-icon></a></li>
         </ul>
     </div>
 </section>
@@ -113,5 +117,6 @@
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="/src/main/resources/static/js/bar.js"></script>
 </body>
 </html>
