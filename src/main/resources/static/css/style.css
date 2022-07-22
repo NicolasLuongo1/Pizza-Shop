@@ -537,6 +537,7 @@ body {
 @media (min-width:300px) and (max-width:599px){
     #header {
         justify-content: center;
+        position: sticky;
     }
     .iconNav{
         font-size: 24px;
@@ -598,6 +599,154 @@ body {
     }
     #header h3 {
         margin-left: 0;
+    }
+    .pizza {
+        position: relative;
+        left: 10px;
+    }
+    .pizzaMain {
+        max-width: 500px;
+    }
+    .main {
+        justify-content: space-between;
+    }
+    .main .title p {
+        font-size: 1em;
+        width: 60%;
+        margin-top: 80px;
+        letter-spacing: 2px;
+        line-height: 1.4;
+        color: var(--white-txt);
+    }
+    .main .title{
+        margin-top: 60px;
+    }
+    .main .title h1 {
+        font-size: 2.6em;
+        margin-bottom: 20px;
+        position: relative;
+    }
+    .aboutUs {
+        padding: 50px 0;
+        display: flex;
+        justify-content: center;
+    }
+    .aboutBox {
+        width: 90%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .aboutUsText h4 {
+        font-size: 2.4em;
+        margin-bottom: 35px;
+    }
+    .aboutUsText p {
+        font-size: 1em;
+        width: 55%;
+    }
+    .aboutUsText input[type="button"] {
+        padding: 8px;
+        margin-top: 50px;
+    }
+    .aboutUsImg {
+        width: 100%;
+    }
+    .aboutUsText {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .aboutUsImg img{
+        max-width: 430px;
+        max-height: 400px;
+    }
+    .findBox > h4 {
+        font-size: 2.4em;
+    }
+    .findBox > h4::after {
+        bottom: -10px;
+        left: 25%;
+        width: 50%;
+        height: 4px;
+        background-color: var(--yelow-txt);
+    }
+    .boxContainer {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 10px;
+        margin-top: 70px;
+    }
+    .boxMap {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .box iframe {
+        width: 100%;
+        height: 50%;
+    }
+    .box {
+        width: 100%;
+        margin-bottom: 0;
+        font-size: 1em;
+    }
+    .boxTxt {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* align-items: center; */
+        width: 100%;
+    }
+    .menuBox {
+        padding: 50px 0;
+    }
+    .menuBox > h4 {
+        font-size:2.4em;
+        margin-bottom: 40px;
+    }
+    .menuBox > h4::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+        height: 6px;
+        background-color: var(--yelow-txt);
+    }
+    .menuBox > p {
+        font-size: 1em;
+        width: 85%;
+        line-height: 1.5;
+        letter-spacing: 2px;
+    }
+    .containerImgMenu {
+        flex-direction: column;
+        gap: 60px;
+    }
+    .menuButton > input[type="button"] {
+        padding: 10px 20px;
+    }
+    .pizzaFooter img{
+        max-width: 500px;
+    }
+    .footer > h2 {
+        font-size: 2.6em;
+        margin-bottom: 40px;
+    }
+    .socialMedia ul {
+        width: 85%;
+    }
+    .icon {
+        font-size: 28px;
+        padding: 8px;
+        border-radius: 50%;
+    }
+    .copyright > p {
+        font-size: 0.8em;
+        letter-spacing: 2px;
     }
 
 }
