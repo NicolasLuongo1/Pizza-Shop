@@ -11,6 +11,7 @@ public interface FoodService {
 
     FoodDTO addFood(FoodDTO foodDTO);
     List<FoodDTO> getAll();
+    FoodDTO deleteFood(String id);
     FoodDTO findById(String id);
 
 }

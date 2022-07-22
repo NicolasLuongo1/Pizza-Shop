@@ -6,10 +6,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,7 +24,7 @@ public class FoodController {
     @PostMapping("/addFoodJson")
     public void addFood(@RequestBody FoodDTO foodDTO) {
 
-        LOG.info("la comida es:" + foodDTO);
+        LOG.info("the food is:" + foodDTO);
         foodService.addFood(foodDTO);
 
         return;
@@ -37,6 +34,12 @@ public class FoodController {
     public List<FoodDTO> getAllJson(){
 
         return foodService.getAll();
+    }
+
+    @GetMapping("/deleteFoodJson/{foodId}")
+    public FoodDTO deleteFood(@PathVariable (value = "foodId") String foodId){
+
+        return foodService.deleteFood(foodId);
     }
 
     //==================================================================
