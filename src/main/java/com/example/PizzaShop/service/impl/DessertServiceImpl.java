@@ -33,6 +33,7 @@ public class DessertServiceImpl implements DessertService {
         dessertRepository.save(INSTANCE.toEntity(dessertDTO));
 
         LOG.info("DessertDTO add is:" + dessertDTO);
+        LOG.info("Dessert entity is:" + INSTANCE.toEntity(dessertDTO));
 
         return dessertDTO;
     }
