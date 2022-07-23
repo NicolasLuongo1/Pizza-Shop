@@ -11,5 +11,5 @@ public interface DessertService {
     DessertDTO addDessert(DessertDTO dessertDTO);
     List<DessertDTO> getAll();
     DessertDTO findById(String id);
-
+    DessertDTO deleteDessert(String idDessert);
 }

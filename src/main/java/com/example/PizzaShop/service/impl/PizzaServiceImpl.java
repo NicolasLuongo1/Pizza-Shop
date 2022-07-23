@@ -6,17 +6,22 @@ import com.example.PizzaShop.entity.Pizza;
 import com.example.PizzaShop.mapper.PizzaMapper;
 import com.example.PizzaShop.repository.PizzaRepository;
 import com.example.PizzaShop.service.PizzaService;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.annotation.AccessType;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 
 @Service
 public class PizzaServiceImpl implements PizzaService {
+
+    private static final Log LOG = LogFactory.getLog(PizzaServiceImpl.class);
 
     @Autowired
     PizzaRepository pizzaRepository;
@@ -33,7 +38,18 @@ public class PizzaServiceImpl implements PizzaService {
 
     @Override
     public List<PizzaDTO> getAll() {
-        return null;
+
+        List<Pizza> listPizza = pizzaRepository.findAll();
+
+        LOG.info("The listPizza (entity) is: "+ listPizza);
+
+        List<PizzaDTO> listPizzaDTO =  new ArrayList<>();
+
+        listPizza.forEach(x->listPizzaDTO.add(INSTANCE.toDTO(x)));
+
+        LOG.info("The listPizzaDTO (DTO) is: "+ listPizzaDTO);
+
+        return listPizzaDTO;
     }
 
     @Override
