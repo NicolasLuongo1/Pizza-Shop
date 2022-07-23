@@ -12,5 +12,5 @@ public interface PattyService {
     PattyDTO addPatty(PattyDTO pattyDTO);
     List<PattyDTO> getAll();
     PattyDTO findById(String id);
-
+    PattyDTO deletePatty(String idPatty);
 }

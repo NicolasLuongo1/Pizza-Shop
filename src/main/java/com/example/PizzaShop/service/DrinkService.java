@@ -12,5 +12,5 @@ public interface DrinkService {
     DrinkDTO addDrink(DrinkDTO drinkDTO);
     List<DrinkDTO> getAll();
     DrinkDTO findById(String id);
-
+    DrinkDTO deleteDrink(String idDrink);
 }

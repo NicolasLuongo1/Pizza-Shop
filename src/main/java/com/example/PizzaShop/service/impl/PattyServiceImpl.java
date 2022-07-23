@@ -3,19 +3,24 @@ package com.example.PizzaShop.service.impl;
 import com.example.PizzaShop.dto.PattyDTO;
 import com.example.PizzaShop.entity.Patty;
 import com.example.PizzaShop.mapper.PattyMapper;
-import com.example.PizzaShop.repository.DessertRepository;
 import com.example.PizzaShop.repository.PattyRepository;
 import com.example.PizzaShop.service.PattyService;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
 public class PattyServiceImpl implements PattyService {
+
+
+    private static final Log LOG = LogFactory.getLog(PattyServiceImpl.class);
 
     @Autowired
     PattyRepository pattyRepository;
@@ -48,8 +53,18 @@ public class PattyServiceImpl implements PattyService {
     @Override
     public PattyDTO findById(String id) {
 
+        Optional<Patty> op = pattyRepository.findById(id);
 
+        return op.isPresent() ? INSTANCE.toDTO(op.get()) : new PattyDTO();
 
-        return null;
+    }
+
+    @Override
+    public PattyDTO deletePatty(String idPatty) {
+
+        PattyDTO pattyDTO = findById(idPatty);
+        pattyRepository.delete(INSTANCE.toEntity(pattyDTO));
+
+        return pattyDTO;
     }
 }
