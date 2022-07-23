@@ -1,5 +1,4 @@
-/* font-family: 'Quattrocento', serif;
-font-family: 'Ruda', sans-serif; */
+
 :root{
     --bg-color:#000000;
     --white-txt:#FFFFFF;
@@ -72,7 +71,7 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: linear-gradient(0deg, rgba(0,0,0,0.9037815809917717) 0%, rgba(101,101,101,0.43879558659401263) 100%), url(/src/main/resources/static/img/wood-2045380_1920\ 1.png);
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.9037815809917717) 0%, rgba(101,101,101,0.43879558659401263) 100%), url(/img/wood-2045380_1920\ 1.png);
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -342,7 +341,7 @@ body {
 
 .footer{
     width: 100%;
-    background-image: url(/src/main/resources/static/img/wood-2045380_1920\ 1.png);
+    background-image: url(/img/wood-2045380_1920\ 1.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -539,6 +538,9 @@ body {
         justify-content: center;
         position: sticky;
     }
+    body {
+        overflow-x: hidden;
+    }
     .iconNav{
         font-size: 24px;
         cursor: pointer;
@@ -642,7 +644,7 @@ body {
     }
     .aboutUsText p {
         font-size: 1em;
-        width: 55%;
+        width: 70%;
     }
     .aboutUsText input[type="button"] {
         padding: 8px;
@@ -661,6 +663,13 @@ body {
         max-width: 430px;
         max-height: 400px;
     }
+    .findBox {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     .findBox > h4 {
         font-size: 2.4em;
     }
@@ -674,8 +683,9 @@ body {
     .boxContainer {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
-        grid-gap: 10px;
-        margin-top: 70px;
+        grid-gap: 0;
+        margin-top: 0;
+        width: 85%;
     }
     .boxMap {
         padding: 0;
@@ -690,6 +700,7 @@ body {
     .box {
         width: 100%;
         margin-bottom: 0;
+        padding: 0;
         font-size: 1em;
     }
     .boxTxt {
@@ -697,7 +708,7 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        /* align-items: center; */
+        align-items: center;
         width: 100%;
     }
     .menuBox {
