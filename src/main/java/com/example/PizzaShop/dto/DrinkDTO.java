@@ -9,6 +9,6 @@ import lombok.*;
 @ToString
 public class DrinkDTO extends FoodDTO {
 
-    private String id;
+
     private String liter;
 }

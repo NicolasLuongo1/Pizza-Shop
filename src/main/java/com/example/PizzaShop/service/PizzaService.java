@@ -1,6 +1,7 @@
 package com.example.PizzaShop.service;
 
 
+import com.example.PizzaShop.dto.FoodDTO;
 import com.example.PizzaShop.dto.PizzaDTO;
 import org.springframework.stereotype.Service;
 
@@ -12,5 +13,5 @@ public interface PizzaService {
     PizzaDTO addPizza(PizzaDTO pizzaDTO);
     List<PizzaDTO> getAll();
     PizzaDTO findById(String id);
-
+    PizzaDTO deletePizza(String pizzaId);
 }

@@ -13,13 +13,9 @@ import javax.persistence.*;
 @ToString
 @Entity
 @Table(name = "patty")
-public class Patty {
+public class Patty extends Food{
 
-    @Id
-    @GeneratedValue(generator="system-uuid")
-    @GenericGenerator(name="system-uuid", strategy = "uuid")
-    @Column(name = "id")
-    private String id;
+
 
     @Column(name = "typeoffilling")
     private String typeOfFilling;

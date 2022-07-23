@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class FoodDTO {
+public abstract class FoodDTO {
 
     private String id;
     private String name;

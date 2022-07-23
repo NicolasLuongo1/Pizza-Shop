@@ -12,14 +12,15 @@ import javax.persistence.*;
 @AllArgsConstructor
 @ToString
 @Entity
-@Table(name = "food")
-public class Food {
+@Inheritance(strategy=InheritanceType.JOINED)
+public abstract class Food {
 
     @Id
     @GeneratedValue(generator="system-uuid")
     @GenericGenerator(name="system-uuid", strategy = "uuid")
     @Column(name = "id")
     private String id;
+
 
     @Column(name = "name")
     private String name;

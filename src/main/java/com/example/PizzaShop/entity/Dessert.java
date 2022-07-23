@@ -1,7 +1,7 @@
 package com.example.PizzaShop.entity;
 
 import lombok.*;
-import org.hibernate.annotations.GenericGenerator;
+
 
 import javax.persistence.*;
 
@@ -13,12 +13,8 @@ import javax.persistence.*;
 @ToString
 @Entity
 @Table(name = "dessert")
-public class Dessert {
+public class Dessert extends Food{
 
-    @Id
-    @GeneratedValue(generator="system-uuid")
-    @GenericGenerator(name="system-uuid", strategy = "uuid")
-    @Column(name = "id")
-    private String id;
+    private String flavored;
 
 }

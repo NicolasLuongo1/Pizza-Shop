@@ -13,13 +13,8 @@ import javax.persistence.*;
 @ToString
 @Entity
 @Table(name = "drink")
-public class Drink {
+public class Drink extends Food {
 
-    @Id
-    @GeneratedValue(generator="system-uuid")
-    @GenericGenerator(name="system-uuid", strategy = "uuid")
-    @Column(name = "id")
-    private String id;
 
     @Column(name = "liter")
     private String liter;
