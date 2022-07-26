@@ -5,7 +5,6 @@ import com.example.PizzaShop.service.DessertService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -14,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 
-@Controller
+@RestController
 @RequestMapping("/dessertController")
 public class DessertController {
 
@@ -53,28 +52,25 @@ public class DessertController {
 
     }
 
-    @GetMapping("/addProducts")
-    public ModelAndView addProduct(){
+    @GetMapping("/addProductos")
+    public ModelAndView productos(){
 
-        ModelAndView modelAndView = new ModelAndView();
-
-        modelAndView.setViewName("addProduct");
+        ModelAndView modelAndView = new ModelAndView("addProduct");
         LOG.info("La vista es: "+ modelAndView);
         modelAndView.addObject("dessert", new DessertDTO());
         LOG.info("La vista ahora es: "+ modelAndView);
 
         LOG.info("el estado de la vista es: " + modelAndView.getStatus() );
-        LOG.info("el diagnostico de la vista es: " + modelAndView.toString());
+        LOG.info("el diagnostico de la vista es: " + modelAndView);
         LOG.info("el vista devuelta es: " + modelAndView.getView() );
 
         return modelAndView;
     }
 
-    @GetMapping("/addProduct")
-    public String addProducts(){
-
-
-        return "index";
+    @GetMapping("/add")
+    public ModelAndView addPss(){
+        ModelAndView mav = new ModelAndView("index");
+        return mav;
     }
 
 }
