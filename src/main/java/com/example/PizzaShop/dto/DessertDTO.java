@@ -10,6 +10,6 @@ import lombok.*;
 @ToString
 public class DessertDTO extends FoodDTO {
 
-    private String flavored;
+    private String flavour;
 
 }

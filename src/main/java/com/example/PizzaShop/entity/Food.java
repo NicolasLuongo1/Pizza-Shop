@@ -4,6 +4,7 @@ import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Getter
@@ -28,12 +29,11 @@ public abstract class Food {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "cant")
-    private int cant;
-
     @Column(name = "price")
     private int price;
 
-    @Column(name = "category")
-    private String category;
+    //TODO aca debo reemplazarlo por el image
+//    @Column(name = "category")
+//    private String category;
+
 }

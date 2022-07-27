@@ -5,9 +5,10 @@ import com.example.PizzaShop.service.DessertService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
+import org.springframework.web.servlet.view.RedirectView;
 
 
 import java.util.List;
@@ -43,34 +44,59 @@ public class DessertController {
         return dessertService.getAll();
 
     }
-
-    @GetMapping("/deleteDessert/{idDessert}")
+/*
+    @GetMapping("/deleteDessertt/{idDessert}")
     public DessertDTO deleteDessert(@PathVariable (value = "idDessert") String idDessert){
 
 
         return dessertService.deleteDessert(idDessert);
 
     }
+*/
+    // TODO ================================== for templates ==================================================
 
-    @GetMapping("/addProductos")
-    public ModelAndView productos(){
+    @GetMapping("/addProduct")
+    public ModelAndView product(){
 
-        ModelAndView modelAndView = new ModelAndView("addProduct");
-        LOG.info("La vista es: "+ modelAndView);
+        ModelAndView modelAndView = new ModelAndView("addDessert");
+
         modelAndView.addObject("dessert", new DessertDTO());
-        LOG.info("La vista ahora es: "+ modelAndView);
+        LOG.info("the view is : "+ modelAndView);
 
-        LOG.info("el estado de la vista es: " + modelAndView.getStatus() );
-        LOG.info("el diagnostico de la vista es: " + modelAndView);
-        LOG.info("el vista devuelta es: " + modelAndView.getView() );
 
         return modelAndView;
     }
 
-    @GetMapping("/add")
-    public ModelAndView addPss(){
-        ModelAndView mav = new ModelAndView("index");
-        return mav;
+    @PostMapping("/add")
+    public RedirectView add(@ModelAttribute("dessert") DessertDTO dessertDTO){
+
+        RedirectView redirectView = new RedirectView("/dessertController/findAll");
+        dessertService.addDessert(dessertDTO);
+
+        return redirectView ;
     }
+
+    @GetMapping("/findAll")
+    public ModelAndView findAll(){
+
+        ModelAndView modelAndView = new ModelAndView("listDessert");
+        modelAndView.addObject("listDessert",dessertService.getAll());
+
+        return modelAndView;
+    }
+
+    @GetMapping("/deleteDessert/{id}")
+    public RedirectView redirectView(@PathVariable(value = "id") String id){
+
+        LOG.info("entre al deleteDessert");
+
+        RedirectView redirectView = new RedirectView("/dessertController/findAll");
+        dessertService.deleteDessert(id);
+
+        return redirectView;
+    }
+
+
+
 
 }

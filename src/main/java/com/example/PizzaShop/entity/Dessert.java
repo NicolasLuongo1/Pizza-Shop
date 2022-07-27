@@ -15,7 +15,7 @@ import javax.persistence.*;
 @Table(name = "dessert")
 public class Dessert extends Food{
 
-    @Column(name = "flavored")
-    private String flavored;
+    @Column(name = "flavour")
+    private String flavour;
 
 }
